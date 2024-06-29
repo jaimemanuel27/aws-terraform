@@ -4,9 +4,10 @@ resource "aws_instance" "ins1" {
   subnet_id     = aws_subnet.public1.id
   vpc_security_group_ids = [aws_security_group.sg-esp.id]
   associate_public_ip_address = true
+  key_name = "ec2-key"
 
   tags = {
-    Name = "EC2 instance 1 terraform"
+    Name = "EC2-i1"
   }
 }
 
@@ -16,9 +17,10 @@ resource "aws_instance" "ins2" {
   subnet_id     = aws_subnet.public2.id
   vpc_security_group_ids = [aws_security_group.sg-esp.id]
   associate_public_ip_address = true
+  key_name = "ec2-key"
 
   tags = {
-    Name = "EC2 instance 2 terraform"
+    Name = "EC2-i2"
   }
 }
 
